@@ -1,0 +1,3 @@
+[submodule "godot-libs"]
+	path = godot-libs
+	url = git@github.com:FelixRiddle/godot-libs.git

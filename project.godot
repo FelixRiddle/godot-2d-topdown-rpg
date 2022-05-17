@@ -1,0 +1,164 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Reference",
+"class": "ArrayUtils",
+"language": "GDScript",
+"path": "res://godot-libs/libs/utils/array_utils.gd"
+}, {
+"base": "Reference",
+"class": "BinarySearchTree",
+"language": "GDScript",
+"path": "res://godot-libs/libs/binary_search_tree.gd"
+}, {
+"base": "Reference",
+"class": "Bow",
+"language": "GDScript",
+"path": "res://godot-libs/inventory/items/types/weapons/types/bow.gd"
+}, {
+"base": "Control",
+"class": "CellsManager",
+"language": "GDScript",
+"path": "res://godot-libs/inventory_ui/cells_manager/cells_manager.gd"
+}, {
+"base": "Node",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://godot-libs/entity/enemies/enemy.gd"
+}, {
+"base": "Node",
+"class": "Entity",
+"language": "GDScript",
+"path": "res://godot-libs/entity/entity.gd"
+}, {
+"base": "Reference",
+"class": "HealingHerb",
+"language": "GDScript",
+"path": "res://godot-libs/inventory/items/types/herbs/types/healing_herb.gd"
+}, {
+"base": "Reference",
+"class": "HealingPotion",
+"language": "GDScript",
+"path": "res://godot-libs/inventory/items/types/potions/types/healing_potion.gd"
+}, {
+"base": "Reference",
+"class": "Herbs",
+"language": "GDScript",
+"path": "res://godot-libs/inventory/items/types/herbs/herb.gd"
+}, {
+"base": "Reference",
+"class": "InputHandler",
+"language": "GDScript",
+"path": "res://godot-libs/inputs/input_handler.gd"
+}, {
+"base": "Reference",
+"class": "Inventory",
+"language": "GDScript",
+"path": "res://godot-libs/inventory/inventory.gd"
+}, {
+"base": "Node",
+"class": "InventoryTest",
+"language": "GDScript",
+"path": "res://godot-libs/test/inventory_test.gd"
+}, {
+"base": "Reference",
+"class": "Item",
+"language": "GDScript",
+"path": "res://godot-libs/inventory/items/item.gd"
+}, {
+"base": "Reference",
+"class": "ItemsDatabase",
+"language": "GDScript",
+"path": "res://godot-libs/test/items_database/items_database.gd"
+}, {
+"base": "Reference",
+"class": "Mace",
+"language": "GDScript",
+"path": "res://godot-libs/inventory/items/types/weapons/types/mace.gd"
+}, {
+"base": "Node",
+"class": "NPC",
+"language": "GDScript",
+"path": "res://godot-libs/entity/npcs/npc.gd"
+}, {
+"base": "Node",
+"class": "Player",
+"language": "GDScript",
+"path": "res://godot-libs/entity/player/player.gd"
+}, {
+"base": "Reference",
+"class": "Potions",
+"language": "GDScript",
+"path": "res://godot-libs/inventory/items/types/potions/potion.gd"
+}, {
+"base": "Reference",
+"class": "StringManipulation",
+"language": "GDScript",
+"path": "res://godot-libs/libs/utils/string_manipulation.gd"
+}, {
+"base": "Reference",
+"class": "Sword",
+"language": "GDScript",
+"path": "res://godot-libs/inventory/items/types/weapons/types/sword.gd"
+}, {
+"base": "Reference",
+"class": "UnknownHealingHerb",
+"language": "GDScript",
+"path": "res://godot-libs/inventory/items/types/herbs/types/unknown_healing_herb.gd"
+}, {
+"base": "Reference",
+"class": "UnknownHealingPotion",
+"language": "GDScript",
+"path": "res://godot-libs/inventory/items/types/potions/types/unknown_healing_potion.gd"
+}, {
+"base": "Reference",
+"class": "Weapon",
+"language": "GDScript",
+"path": "res://godot-libs/inventory/items/types/weapons/weapon.gd"
+} ]
+_global_script_class_icons={
+"ArrayUtils": "",
+"BinarySearchTree": "",
+"Bow": "",
+"CellsManager": "",
+"Enemy": "",
+"Entity": "",
+"HealingHerb": "",
+"HealingPotion": "",
+"Herbs": "",
+"InputHandler": "",
+"Inventory": "",
+"InventoryTest": "",
+"Item": "",
+"ItemsDatabase": "",
+"Mace": "",
+"NPC": "",
+"Player": "",
+"Potions": "",
+"StringManipulation": "",
+"Sword": "",
+"UnknownHealingHerb": "",
+"UnknownHealingPotion": "",
+"Weapon": ""
+}
+
+[application]
+
+config/name="New Game Project"
+config/icon="res://icon.png"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
