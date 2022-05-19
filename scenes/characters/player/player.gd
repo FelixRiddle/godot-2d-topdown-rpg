@@ -40,12 +40,15 @@ func _ready():
 #func _process(delta):
 #	pass
 
+
 # Physics process tries to perform operations at a constant framerate
 func _physics_process(delta):
 	get_input()
 	velocity = move_and_slide(velocity)
 
 
+# Change velocity depending on the player input, it's normalized, so that
+# when the player presses 2 keys, it doesn't add up velocity
 func get_input():
 	velocity = Vector2()
 	if(input_handler.right()):

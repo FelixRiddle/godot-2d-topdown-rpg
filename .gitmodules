@@ -1,3 +1,6 @@
 [submodule "godot-libs"]
 	path = godot-libs
 	url = git@github.com:FelixRiddle/godot-libs.git
+[submodule "art/godot-2d-topdown-rpg-sprites"]
+	path = art/godot-2d-topdown-rpg-sprites
+	url = git@github.com:FelixRiddle/godot-2d-topdown-rpg-sprites.git
