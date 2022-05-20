@@ -154,3 +154,6 @@ anims/WalkUp = SubResource( 4 )
 [node name="InventoryVisibleStateTimer" type="Timer" parent="."]
 wait_time = 0.3
 one_shot = true
+
+[node name="AttackTimer" type="Timer" parent="."]
+one_shot = true

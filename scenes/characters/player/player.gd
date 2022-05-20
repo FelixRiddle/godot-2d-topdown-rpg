@@ -8,10 +8,13 @@ extends KinematicBody2D
 onready var anim_player:AnimationPlayer = $AnimationPlayer
 onready var inv_mng:InventoryManager = $InventoryManager
 onready var inv_timer:Timer = $InventoryVisibleStateTimer
+onready var attack_timer:Timer = $AttackTimer
 
-export(float) var inv_delay = 0.3
-export(int) var speed = 200
+export(float) var attack_delay:float = 1.0
+export(float) var inv_delay:float = 0.3
+export(int) var speed:int = 200
 
+var debug = true setget set_debug, get_debug
 var input_handler = preload("res://godot-libs/inputs/" +
 	"input_handler.gd").new({ "disable_wasd": false,
 	"disable_arrows": false, "disable_joystick": false, })
@@ -51,6 +54,8 @@ func _physics_process(delta):
 	# Check if the user opened or closed the inventory
 	update_inventory_visible_state()
 	
+	has_attacked()
+	
 	velocity = move_and_slide(velocity)
 
 
@@ -65,6 +70,18 @@ func attack():
 				anim_player.play("AttackUp")
 			"_":
 				continue
+
+
+func get_attack_input() -> bool:
+	# 1 = Left mouse button
+	if(Input.is_mouse_button_pressed(1)):
+		return true
+		
+		# Then second argument is Gamepad button 0 or DualShock X button or
+		# Nintendo B button or Xbox A button
+	elif(Input.is_joy_button_pressed(0, 0)):
+		return true
+	return false
 
 
 # Change velocity depending on the player input, it's normalized, so that
@@ -89,6 +106,23 @@ func get_input():
 	velocity = velocity.normalized() * speed
 
 
+func has_attacked():
+	# We need a cooldown for this one too
+	if(get_attack_input() && attack_timer.is_stopped()):
+		if(debug):
+			print("Player has attacked!")
+		attack()
+		
+		attack_timer.start()
+
+
+# setget debug
+func set_debug(value:bool) -> void:
+	debug = value
+func get_debug() -> bool:
+	return debug
+
+
 # setget inv_ui
 func set_inv(value) -> void:
 	inv = value
@@ -105,8 +139,6 @@ func get_inv_ui():
 
 # Open or close the inventory
 func update_inventory_visible_state():
-	# It's too fast!, we need a cooldown.
-	
 	var is_inv_key_pressed = false
 	
 	if(Input.is_physical_key_pressed(KEY_I)):
