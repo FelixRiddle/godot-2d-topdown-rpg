@@ -157,3 +157,6 @@ one_shot = true
 
 [node name="AttackTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
