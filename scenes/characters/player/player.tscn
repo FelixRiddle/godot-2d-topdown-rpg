@@ -140,7 +140,7 @@ shape = SubResource( 2 )
 texture = ExtResource( 3 )
 hframes = 8
 vframes = 8
-frame = 1
+frame = 7
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/AttackDown = SubResource( 3 )
@@ -160,3 +160,11 @@ one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+
+[node name="ObjectDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectDetector"]
+position = Vector2( 0, 1 )
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="ObjectDetector" to="." method="_on_ObjectDetector_body_entered"]

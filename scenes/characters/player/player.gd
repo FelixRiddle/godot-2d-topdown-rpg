@@ -42,11 +42,6 @@ func _ready():
 	self.inv_ui.cells_manager.length = 45
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
 # Physics process tries to perform operations at a constant framerate
 func _physics_process(delta):
 	get_input()
@@ -156,3 +151,7 @@ func update_inventory_visible_state():
 		# Start the timer(if not it would open and close
 		# every frame the keys are pressed)
 		inv_timer.start(inv_delay)
+
+func _on_ObjectDetector_body_entered(body):
+	print("Body: ", body)
+	print("It's name: ", body.name)

@@ -1,12 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/characters/player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tilemaps/plants.tres" type="TileSet" id=2]
 [ext_resource path="res://tilemaps/ground.tres" type="TileSet" id=3]
 [ext_resource path="res://art/godot-2d-topdown-rpg-sprites/world_tilemap.png" type="Texture" id=4]
-[ext_resource path="res://art/godot-2d-topdown-rpg-sprites/plants/trees/normal_tree_2.png" type="Texture" id=5]
-[ext_resource path="res://art/godot-2d-topdown-rpg-sprites/plants/trees/tree_no_leaves.png" type="Texture" id=6]
-[ext_resource path="res://art/godot-2d-topdown-rpg-sprites/plants/trees/normal_tree.png" type="Texture" id=7]
+[ext_resource path="res://scenes/objects/plants/trees/normal_tree/tree.tscn" type="PackedScene" id=8]
 
 [sub_resource type="TileSet" id=1]
 0/name = "world_tilemap.png 0"
@@ -33,77 +31,6 @@
 0/shapes = [  ]
 0/z_index = 0
 
-[sub_resource type="TileSet" id=2]
-0/name = "normal_tree.png 0"
-0/texture = ExtResource( 7 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 256, 256 )
-0/tile_mode = 1
-0/autotile/bitmask_mode = 0
-0/autotile/bitmask_flags = [  ]
-0/autotile/icon_coordinate = Vector2( 0, 0 )
-0/autotile/tile_size = Vector2( 256, 256 )
-0/autotile/spacing = 0
-0/autotile/occluder_map = [  ]
-0/autotile/navpoly_map = [  ]
-0/autotile/priority_map = [  ]
-0/autotile/z_index_map = [  ]
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape_one_way = false
-0/shape_one_way_margin = 0.0
-0/shapes = [  ]
-0/z_index = 0
-1/name = "normal_tree_2.png 1"
-1/texture = ExtResource( 5 )
-1/tex_offset = Vector2( 0, 0 )
-1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 0, 0, 256, 256 )
-1/tile_mode = 1
-1/autotile/bitmask_mode = 0
-1/autotile/bitmask_flags = [  ]
-1/autotile/icon_coordinate = Vector2( 0, 0 )
-1/autotile/tile_size = Vector2( 256, 256 )
-1/autotile/spacing = 0
-1/autotile/occluder_map = [  ]
-1/autotile/navpoly_map = [  ]
-1/autotile/priority_map = [  ]
-1/autotile/z_index_map = [  ]
-1/occluder_offset = Vector2( 0, 0 )
-1/navigation_offset = Vector2( 0, 0 )
-1/shape_offset = Vector2( 0, 0 )
-1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape_one_way = false
-1/shape_one_way_margin = 0.0
-1/shapes = [  ]
-1/z_index = 0
-2/name = "tree_no_leaves.png 2"
-2/texture = ExtResource( 6 )
-2/tex_offset = Vector2( 0, 0 )
-2/modulate = Color( 1, 1, 1, 1 )
-2/region = Rect2( 0, 0, 256, 256 )
-2/tile_mode = 1
-2/autotile/bitmask_mode = 0
-2/autotile/bitmask_flags = [  ]
-2/autotile/icon_coordinate = Vector2( 0, 0 )
-2/autotile/tile_size = Vector2( 256, 256 )
-2/autotile/spacing = 0
-2/autotile/occluder_map = [  ]
-2/autotile/navpoly_map = [  ]
-2/autotile/priority_map = [  ]
-2/autotile/z_index_map = [  ]
-2/occluder_offset = Vector2( 0, 0 )
-2/navigation_offset = Vector2( 0, 0 )
-2/shape_offset = Vector2( 0, 0 )
-2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-2/shape_one_way = false
-2/shape_one_way_margin = 0.0
-2/shapes = [  ]
-2/z_index = 0
-
 [node name="TestScene" type="Node"]
 
 [node name="Ground" type="TileMap" parent="."]
@@ -124,9 +51,440 @@ cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( -720896, 0, 0, -720895, 0, 0, -720894, 0, 0, -720890, 0, 0, -720889, 0, 0, -720884, 0, 0, -589825, 0, 0, -655349, 0, 0, -655348, 0, 0, -524303, 0, 0, -524301, 0, 0, -589823, 0, 0, -458768, 0, 0, -458767, 0, 0, -458757, 0, 0, -524287, 0, 0, -524286, 0, 0, -524282, 0, 0, -524281, 0, 0, -524273, 0, 0, -393232, 0, 0, -458741, 0, 0, -458737, 0, 0, -327692, 0, 0, -327691, 0, 0, -393205, 0, 0, -262148, 0, 0, -327669, 0, 0, -196621, 0, 0, -262141, 0, 0, -262134, 0, 0, -262133, 0, 0, -131086, 0, 0, -131085, 0, 0, -196599, 0, 0, -196598, 0, 0, -65552, 0, 0, -65548, 0, 0, -65547, 0, 0, -131064, 0, 0, -131063, 0, 0, -131062, 0, 0, -131058, 0, 0, -16, 0, 0, -6, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65524, 0, 0, -65522, 0, 0, 65520, 0, 0, 65525, 0, 0, 65526, 0, 0, 7, 0, 0, 8, 0, 0, 12, 0, 0, 131057, 0, 0, 131061, 0, 0, 131069, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 196602, 0, 0, 196605, 0, 0, 196606, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 262135, 0, 0, 262138, 0, 0, 262139, 0, 0, 262141, 0, 0, 262142, 0, 0, 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196622, 0, 0, 327678, 0, 0, 327679, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 393202, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327694, 0, 0, 458743, 0, 0, 393219, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393230, 0, 0, 524275, 0, 0, 524285, 0, 0, 458765, 0, 0, 589810, 0, 0, 589819, 0, 0, 589821, 0, 0, 524297, 0, 0, 655359, 0, 0, 589824, 0, 0, 589827, 0, 0 )
 
-[node name="Trees" type="TileMap" parent="Ground"]
-tile_set = SubResource( 2 )
-format = 1
-tile_data = PoolIntArray( -1966105, 0, 0, -1966052, 1, 0, -1507346, 1, 0, -1507324, 1, 0, -1245201, 2, 0, -1310699, 1, 0, -1179674, 0, 0, -1179662, 0, 0, -1179658, 2, 0, -1179655, 1, 0, -1114117, 2, 0, -1048590, 1, 0, -983058, 0, 0, -983052, 2, 0, -917523, 2, 0, -983028, 0, 0, -851984, 1, 0, -851979, 0, 0, -851977, 0, 0, -851975, 1, 0, -851971, 2, 0, -786453, 0, 0, -720912, 0, 0, -720909, 1, 0, -655388, 2, 0, -655381, 1, 0, -655379, 1, 0, -655374, 2, 0, -655367, 2, 0, -655365, 0, 0, -589841, 2, 0, -589833, 1, 0, -524299, 0, 0, -589821, 1, 0, -589799, 0, 0, -458773, 2, 0, -458767, 0, 0, -524270, 2, 0, -393235, 0, 0, -393229, 1, 0, -393222, 0, 0, -327689, 1, 0, -262162, 1, 0, -196623, 0, 0, -196619, 0, 0, -131098, 0, 0, -131091, 2, 0, 196597, 2, 0, 131121, 1, 0, 196612, 1, 0, 196630, 0, 0, 262151, 0, 0, 327725, 2, 0, 458742, 0, 0, 393216, 0, 0, 393219, 2, 0, 393227, 0, 0, 393246, 2, 0, 524253, 0, 0, 524288, 1, 0, 524293, 0, 0, 524296, 1, 0, 524302, 2, 0, 589840, 0, 0, 589843, 0, 0, 720890, 0, 0, 655363, 2, 0, 786421, 2, 0, 786429, 1, 0, 720916, 2, 0, 786432, 0, 0, 786443, 0, 0, 917475, 0, 0, 917489, 0, 0, 983017, 2, 0, 983028, 2, 0, 917510, 0, 0, 917519, 2, 0, 917526, 1, 0, 1048567, 0, 0, 1048573, 1, 0, 983043, 1, 0, 983049, 2, 0, 983058, 1, 0, 983079, 0, 0, 1114107, 2, 0, 1048579, 1, 0, 1048600, 0, 0, 1179610, 2, 0, 1179631, 1, 0, 1179635, 1, 0, 1179651, 2, 0, 1179664, 2, 0, 1179668, 0, 0, 1179674, 2, 0, 1179677, 0, 0, 1310714, 0, 0, 1245198, 0, 0, 1310720, 0, 0, 1310727, 0, 0, 1441758, 0, 0, 1441780, 0, 0, 1441786, 2, 0, 1376274, 1, 0, 1507289, 0, 0, 1507309, 0, 0, 1507320, 1, 0, 1441796, 1, 0, 1441803, 2, 0, 1441815, 0, 0, 1441821, 1, 0, 1572842, 2, 0, 1572849, 2, 0, 1507337, 1, 0, 1507343, 0, 0, 1638376, 1, 0, 1638389, 2, 0, 1638398, 0, 0, 1572896, 2, 0, 1572902, 2, 0, 1703909, 1, 0, 1703932, 1, 0, 1638401, 1, 0, 1638404, 2, 0, 1638416, 1, 0, 1638420, 1, 0, 1638425, 0, 0, 1769454, 1, 0, 1834999, 1, 0, 1835004, 2, 0, 1769485, 2, 0, 1769492, 2, 0, 1769500, 1, 0, 1835011, 0, 0, 1835016, 2, 0, 1835019, 0, 0, 1835040, 0, 0, 1835049, 1, 0, 1966055, 0, 0, 1966058, 2, 0, 1966062, 0, 0, 1966067, 0, 0, 1900568, 1, 0, 2031582, 0, 0, 2031615, 1, 0, 1966085, 1, 0, 1966099, 0, 0, 2031642, 2, 0, 2162668, 1, 0, 2162672, 2, 0, 2162680, 2, 0, 2162684, 0, 0, 2097154, 1, 0, 2162702, 2, 0, 2293759, 2, 0, 2228232, 0, 0, 2228237, 1, 0, 2228245, 1, 0, 2228252, 0, 0, 2359286, 1, 0, 2293786, 2, 0, 2424810, 1, 0, 2424816, 0, 0, 2424837, 0, 0, 2424850, 0, 0, 2555886, 2, 0, 2490379, 2, 0, 2621433, 0, 0, 2621439, 1, 0, 2555926, 2, 0, 2686937, 1, 0, 2686964, 1, 0, 2621443, 2, 0, 2621457, 2, 0, 2621472, 1, 0, 2686988, 1, 0, 2818022, 0, 0, 2818039, 2, 0, 2818043, 2, 0, 2752559, 1, 0, 2883570, 1, 0, 2818050, 1, 0, 2818055, 0, 0, 3014652, 1, 0, 3080195, 1, 0, 3342319, 1, 0, 3407839, 2, 0, 3538949, 0, 0, 3669986, 0, 0, 3670060, 2, 0, 3735587, 1, 0, 3801113, 2, 0, 3866649, 2, 0 )
+[node name="Trees" type="Node" parent="."]
+
+[node name="NormalTrees" type="Node" parent="Trees"]
+
+[node name="Tree" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( -875, -750 )
+
+[node name="Tree2" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( -219, -994 )
+
+[node name="Tree3" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( -467, -482 )
+
+[node name="Tree4" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( -735, -200 )
+
+[node name="Tree10" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( -98, 609 )
+
+[node name="Tree11" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( -428, 1019 )
+
+[node name="Tree12" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( 231, 1026 )
+
+[node name="Tree13" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( -112, 1315 )
+
+[node name="Tree14" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( 628, 817 )
+
+[node name="Tree15" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( 971, 1281 )
+
+[node name="Tree16" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( 325, 420 )
+
+[node name="Tree17" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( 1200, 837 )
+
+[node name="Tree18" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( 1731, 1664 )
+
+[node name="Tree19" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( 1401, 1254 )
+
+[node name="Tree20" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( 580, 1234 )
+
+[node name="Tree21" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( 223, 1517 )
+
+[node name="Tree22" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( 1205, 1779 )
+
+[node name="Tree23" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( 1858, 2115 )
+
+[node name="Tree24" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( 741, 2236 )
+
+[node name="Tree25" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( 566, 1731 )
+
+[node name="Tree26" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( 1252, 2330 )
+
+[node name="Tree27" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( 842, 2687 )
+
+[node name="Tree28" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( 317, 3017 )
+
+[node name="Tree29" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( 458, 2580 )
+
+[node name="Tree30" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( 128, 2096 )
+
+[node name="Tree31" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( 54, 2728 )
+
+[node name="Tree32" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( -343, 1773 )
+
+[node name="Tree33" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( -235, 2230 )
+
+[node name="Tree34" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( -733, 1396 )
+
+[node name="Tree35" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( -1096, 1975 )
+
+[node name="Tree36" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( -746, 1988 )
+
+[node name="Tree37" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( -437, 2493 )
+
+[node name="Tree38" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( -188, 3011 )
+
+[node name="Tree39" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( -793, 2991 )
+
+[node name="Tree40" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( -827, 2399 )
+
+[node name="Tree41" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( -1103, 2756 )
+
+[node name="Tree42" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( -444, 3395 )
+
+[node name="Tree43" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( 61, 3348 )
+
+[node name="Tree44" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( 915, 3409 )
+
+[node name="Tree45" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( 1453, 2797 )
+
+[node name="Tree46" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( 1931, 2615 )
+
+[node name="Tree47" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( 587, 3231 )
+
+[node name="Tree48" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( 1099, 2967 )
+
+[node name="Tree8" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( -839, -1105 )
+
+[node name="Tree9" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( -1039, -1319 )
+
+[node name="Tree5" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( -1526, -729 )
+
+[node name="Tree6" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( -270, -1338 )
+
+[node name="Tree7" parent="Trees/NormalTrees" instance=ExtResource( 8 )]
+position = Vector2( -1455, -261 )
+
+[node name="NormalTree2" type="Node" parent="Trees"]
+
+[node name="Tree4" parent="Trees/NormalTree2" instance=ExtResource( 8 )]
+position = Vector2( 816, -259 )
+tree_id = 1
+
+[node name="Tree12" parent="Trees/NormalTree2" instance=ExtResource( 8 )]
+position = Vector2( 666, 468 )
+tree_id = 1
+
+[node name="Tree13" parent="Trees/NormalTree2" instance=ExtResource( 8 )]
+position = Vector2( 935, 801 )
+tree_id = 1
+
+[node name="Tree14" parent="Trees/NormalTree2" instance=ExtResource( 8 )]
+position = Vector2( 424, 801 )
+tree_id = 1
+
+[node name="Tree15" parent="Trees/NormalTree2" instance=ExtResource( 8 )]
+position = Vector2( -84, 973 )
+tree_id = 1
+
+[node name="Tree16" parent="Trees/NormalTree2" instance=ExtResource( 8 )]
+position = Vector2( -407, 1356 )
+tree_id = 1
+
+[node name="Tree17" parent="Trees/NormalTree2" instance=ExtResource( 8 )]
+position = Vector2( -595, 1655 )
+tree_id = 1
+
+[node name="Tree18" parent="Trees/NormalTree2" instance=ExtResource( 8 )]
+position = Vector2( -50, 1709 )
+tree_id = 1
+
+[node name="Tree19" parent="Trees/NormalTree2" instance=ExtResource( 8 )]
+position = Vector2( 902, 1551 )
+tree_id = 1
+
+[node name="Tree20" parent="Trees/NormalTree2" instance=ExtResource( 8 )]
+position = Vector2( 1417, 1571 )
+tree_id = 1
+
+[node name="Tree21" parent="Trees/NormalTree2" instance=ExtResource( 8 )]
+position = Vector2( 1515, 1981 )
+tree_id = 1
+
+[node name="Tree22" parent="Trees/NormalTree2" instance=ExtResource( 8 )]
+position = Vector2( 1646, 2375 )
+tree_id = 1
+
+[node name="Tree23" parent="Trees/NormalTree2" instance=ExtResource( 8 )]
+position = Vector2( 435, 2096 )
+tree_id = 1
+
+[node name="Tree24" parent="Trees/NormalTree2" instance=ExtResource( 8 )]
+position = Vector2( 1125, 2577 )
+tree_id = 1
+
+[node name="Tree25" parent="Trees/NormalTree2" instance=ExtResource( 8 )]
+position = Vector2( 1071, 2019 )
+tree_id = 1
+
+[node name="Tree26" parent="Trees/NormalTree2" instance=ExtResource( 8 )]
+position = Vector2( 778, 2941 )
+tree_id = 1
+
+[node name="Tree27" parent="Trees/NormalTree2" instance=ExtResource( 8 )]
+position = Vector2( 1242, 3257 )
+tree_id = 1
+
+[node name="Tree28" parent="Trees/NormalTree2" instance=ExtResource( 8 )]
+position = Vector2( 1726, 2823 )
+tree_id = 1
+
+[node name="Tree29" parent="Trees/NormalTree2" instance=ExtResource( 8 )]
+position = Vector2( 350, 3412 )
+tree_id = 1
+
+[node name="Tree30" parent="Trees/NormalTree2" instance=ExtResource( 8 )]
+position = Vector2( -148, 3536 )
+tree_id = 1
+
+[node name="Tree31" parent="Trees/NormalTree2" instance=ExtResource( 8 )]
+position = Vector2( -639, 3220 )
+tree_id = 1
+
+[node name="Tree32" parent="Trees/NormalTree2" instance=ExtResource( 8 )]
+position = Vector2( -249, 2655 )
+tree_id = 1
+
+[node name="Tree33" parent="Trees/NormalTree2" instance=ExtResource( 8 )]
+position = Vector2( -727, 2655 )
+tree_id = 1
+
+[node name="Tree34" parent="Trees/NormalTree2" instance=ExtResource( 8 )]
+position = Vector2( 63, 2349 )
+tree_id = 1
+
+[node name="Tree35" parent="Trees/NormalTree2" instance=ExtResource( 8 )]
+position = Vector2( -532, 2053 )
+tree_id = 1
+
+[node name="Tree36" parent="Trees/NormalTree2" instance=ExtResource( 8 )]
+position = Vector2( -1070, 2325 )
+tree_id = 1
+
+[node name="Tree37" parent="Trees/NormalTree2" instance=ExtResource( 8 )]
+position = Vector2( -898, 1622 )
+tree_id = 1
+
+[node name="Tree6" parent="Trees/NormalTree2" instance=ExtResource( 8 )]
+position = Vector2( -984, -407 )
+tree_id = 1
+
+[node name="Tree7" parent="Trees/NormalTree2" instance=ExtResource( 8 )]
+position = Vector2( -548, -919 )
+tree_id = 1
+
+[node name="Tree8" parent="Trees/NormalTree2" instance=ExtResource( 8 )]
+position = Vector2( -1660, -931 )
+tree_id = 1
+
+[node name="Tree9" parent="Trees/NormalTree2" instance=ExtResource( 8 )]
+position = Vector2( -208, -727 )
+tree_id = 1
+
+[node name="Tree11" parent="Trees/NormalTree2" instance=ExtResource( 8 )]
+position = Vector2( -665, -1441 )
+tree_id = 1
+
+[node name="Tree10" parent="Trees/NormalTree2" instance=ExtResource( 8 )]
+position = Vector2( -1018, -65 )
+tree_id = 1
+
+[node name="Tree5" parent="Trees/NormalTree2" instance=ExtResource( 8 )]
+position = Vector2( 1244, -723 )
+tree_id = 1
+
+[node name="TreeNoLeaves" type="Node" parent="Trees"]
+
+[node name="Tree3" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( 458, -751 )
+tree_id = 2
+
+[node name="Tree9" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( 133, 699 )
+tree_id = 2
+
+[node name="Tree10" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( 335, 1271 )
+tree_id = 2
+
+[node name="Tree11" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( 106, 1227 )
+tree_id = 2
+
+[node name="Tree12" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( 786, 1107 )
+tree_id = 2
+
+[node name="Tree13" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( 1214, 1419 )
+tree_id = 2
+
+[node name="Tree14" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( 1306, 2063 )
+tree_id = 2
+
+[node name="Tree15" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( 1438, 2491 )
+tree_id = 2
+
+[node name="Tree16" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( 974, 2291 )
+tree_id = 2
+
+[node name="Tree17" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( 862, 1815 )
+tree_id = 2
+
+[node name="Tree18" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( 702, 1943 )
+tree_id = 2
+
+[node name="Tree19" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( 246, 1787 )
+tree_id = 2
+
+[node name="Tree20" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( -78, 1967 )
+tree_id = 2
+
+[node name="Tree21" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( -598, 2307 )
+tree_id = 2
+
+[node name="Tree22" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( -1270, 2455 )
+tree_id = 2
+
+[node name="Tree23" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( -1298, 2071 )
+tree_id = 2
+
+[node name="Tree24" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( -930, 2799 )
+tree_id = 2
+
+[node name="Tree25" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( -517, 2761 )
+tree_id = 2
+
+[node name="Tree26" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( -434, 3110 )
+tree_id = 2
+
+[node name="Tree27" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( -266, 3342 )
+tree_id = 2
+
+[node name="Tree28" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( 112, 3071 )
+tree_id = 2
+
+[node name="Tree39" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( 621, 3509 )
+tree_id = 2
+
+[node name="Tree29" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( 293, 2705 )
+tree_id = 2
+
+[node name="Tree30" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( 316, 2315 )
+tree_id = 2
+
+[node name="Tree31" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( 655, 2547 )
+tree_id = 2
+
+[node name="Tree32" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( 564, 2878 )
+tree_id = 2
+
+[node name="Tree33" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( 936, 3122 )
+tree_id = 2
+
+[node name="Tree34" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( 1277, 2817 )
+tree_id = 2
+
+[node name="Tree35" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( 1432, 3073 )
+tree_id = 2
+
+[node name="Tree36" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( 2007, 2317 )
+tree_id = 2
+
+[node name="Tree37" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( 1920, 1792 )
+tree_id = 2
+
+[node name="Tree38" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( 1580, 1396 )
+tree_id = 2
+
+[node name="Tree4" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( -516, -1176 )
+tree_id = 2
+
+[node name="Tree5" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( -1364, -1149 )
+tree_id = 2
+
+[node name="Tree6" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( -1230, -488 )
+tree_id = 2
+
+[node name="Tree7" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( -746, -567 )
+tree_id = 2
+
+[node name="Tree8" parent="Trees/TreeNoLeaves" instance=ExtResource( 8 )]
+position = Vector2( -1234, -815 )
+tree_id = 2
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
