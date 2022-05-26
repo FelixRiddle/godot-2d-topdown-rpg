@@ -1,0 +1,28 @@
+[core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+[remote "origin"]
+        url = git@github.com:FelixRiddle/godot-2d-topdown-rpg.git
+        fetch = +refs/heads/*:refs/remotes/origin/*
+        pushurl = git@gitlab.com:FelixRiddle/godot-2d-topdown-rpg.git
+        pushurl = git@github.com:FelixRiddle/godot-2d-topdown-rpg.git
+        pushurl = git@bitbucket.org:fedekiller999/godot-2d-topdown-rpg.git
+[branch "main"]
+        remote = origin
+        merge = refs/heads/main
+[submodule "godot-libs"]
+        url = git@github.com:FelixRiddle/godot-libs.git
+        active = true
+[alias]
+        supdate = submodule update --remote --init --recursive --merge
+[submodule "art/godot-2d-topdown-rpg-sprites"]
+        url = git@github.com:FelixRiddle/godot-2d-topdown-rpg-sprites.git
+        active = true
+[remote "gitlab"]
+        url = git@gitlab.com:FelixRiddle/godot-2d-topdown-rpg.git
+        fetch = +refs/heads/*:refs/remotes/gitlab/*
+[remote "bitbucket"]
+        url = git@bitbucket.org:fedekiller999/godot-2d-topdown-rpg.git
+        fetch = +refs/heads/*:refs/remotes/bitbucket/*

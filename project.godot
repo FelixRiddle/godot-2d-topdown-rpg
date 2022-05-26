@@ -177,7 +177,7 @@ _global_script_class_icons={
 [application]
 
 config/name="godot-2d-topdown-rpg"
-run/main_scene="res://scenes/stages/test/test_scene.tscn"
+run/main_scene="res://scenes/stages/worlds/world1.tscn"
 config/icon="res://icon.png"
 
 [autoload]
