@@ -5,41 +5,55 @@ extends KinematicBody2D
 # [] Exp system
 # [] Attributes(vitality, endurance, agility, intelligence, etc)
 
+var ObjectUtils = preload("res://godot-libs/libs/utils/object_utils.gd")
+var input_handler = preload("res://godot-libs/inputs/" +
+	"input_handler.gd").new({ "disable_wasd": false,
+	"disable_arrows": false, "disable_joystick": false, })
+
 onready var anim_player:AnimationPlayer = $AnimationPlayer
 onready var inv_mng:InventoryManager = $InventoryManager
 onready var inv_timer:Timer = $InventoryVisibleStateTimer
 onready var attack_timer:Timer = $AttackTimer
 
 export(float) var attack_delay:float = 1.0
-export(float) var inv_delay:float = 0.3
+export(float) var inv_delay:float = 0.1
 export(int) var speed:int = 200
 
 var debug = true setget set_debug, get_debug
-var input_handler = preload("res://godot-libs/inputs/" +
-	"input_handler.gd").new({ "disable_wasd": false,
-	"disable_arrows": false, "disable_joystick": false, })
-var inv setget set_inv, get_inv
 var inv_ui setget set_inv_ui, get_inv_ui
-var velocity = Vector2()
+var hotbar setget set_hotbar, get_hotbar
+var velocity = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.inv_mng.set_info({ "debug": false })
-	
 	# The inventory gets added to the inventory_manager and is set to
 	# inv_ui variable
 	self.inv_ui = self.inv_mng.add_inventory_scene(
 			load("res://godot-libs/inventory_ui/inventory/inventory.tscn"))
 	
+	self.hotbar = self.inv_mng.add_inventory_scene(
+			load("res://godot-libs/inventory_ui/hotbar/hotbar.tscn")
+	)
+	
 	# Change ui visibility to false, so it doesn't start with the inventory
 	# open
-	self.inv_ui.set_info({ "debug": false, "visible": false, })
+	ObjectUtils.set_info(self.inv_ui, {
+			"debug": true,
+			"name": "InventoryUI",
+			"visible": false,
+		})
 	
-	# Get a reference to the inventory script that contains the items
-	self.inv = self.inv_ui.cells_manager.inventory
 	
 	# Set the InventoryUI size/length
-	self.inv_ui.cells_manager.length = 45
+	self.inv_ui.cells_manager.length = 18
+	
+	# Hotbar
+	ObjectUtils.set_info(self.hotbar, {
+			"debug": true,
+			"length": 5,
+			"name": "Hotbar",
+		})
+	self.hotbar.set_automatic_size()
 
 
 # Physics process tries to perform operations at a constant framerate
@@ -63,7 +77,7 @@ func attack():
 				anim_player.play("AttackDown")
 			"WalkUp":
 				anim_player.play("AttackUp")
-			"_":
+			_:
 				continue
 
 
@@ -119,10 +133,10 @@ func get_debug() -> bool:
 
 
 # setget inv_ui
-func set_inv(value) -> void:
-	inv = value
-func get_inv():
-	return inv
+func set_hotbar(value) -> void:
+	hotbar = value
+func get_hotbar():
+	return hotbar
 
 
 # setget inv_ui
@@ -151,6 +165,7 @@ func update_inventory_visible_state():
 		# Start the timer(if not it would open and close
 		# every frame the keys are pressed)
 		inv_timer.start(inv_delay)
+
 
 func _on_ObjectDetector_body_entered(body):
 	print("Body: ", body)

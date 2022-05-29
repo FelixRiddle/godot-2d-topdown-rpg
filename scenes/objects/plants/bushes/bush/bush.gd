@@ -18,7 +18,6 @@ func _ready():
 	
 	# Create the object and pass a reference of this node
 	obj = obj.new(self)
-	print("Obj: ", obj)
 
 func set_opacity_change(value) -> void:
 	opacity_change = value
