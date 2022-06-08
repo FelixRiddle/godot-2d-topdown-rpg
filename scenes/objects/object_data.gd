@@ -4,12 +4,12 @@ extends Node
 # Tree sprites
 static func get_tree_sprites() -> Array:
 	return [
-		"res://art/godot-2d-topdown-rpg-sprites/plants/trees/" + \
-				"normal_tree.png",
-		"res://art/godot-2d-topdown-rpg-sprites/plants/trees/" + \
-				"normal_tree_2.png",
-		"res://art/godot-2d-topdown-rpg-sprites/plants/trees/" + \
-				"tree_no_leaves.png",
+		"res://art/godot-2d-topdown-rpg-sprites/png/plants/" + \
+				"trees/normal_tree.png",
+		"res://art/godot-2d-topdown-rpg-sprites/png/plants/" + \
+				"trees/normal_tree_2.png",
+		"res://art/godot-2d-topdown-rpg-sprites/png/plants/" + \
+				"trees/tree_no_leaves.png",
 	]
 
 static func get_tree_sprite_by_id(id=0):
@@ -19,8 +19,8 @@ static func get_tree_sprite_by_id(id=0):
 # Bush sprites
 static func get_bush_sprites() -> Array:
 	return [
-		"res://art/godot-2d-topdown-rpg-sprites/plants/bushes/bush1.png",
-		"res://art/godot-2d-topdown-rpg-sprites/plants/bushes/bush2.png",
+		"res://art/godot-2d-topdown-rpg-sprites/png/plants/bushes/bush1.png",
+		"res://art/godot-2d-topdown-rpg-sprites/png/plants/bushes/bush2.png",
 	];
 
 static func get_bush_sprite_by_id(id=0):

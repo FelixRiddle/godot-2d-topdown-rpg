@@ -11,7 +11,10 @@ var input_handler = preload("res://godot-libs/inputs/" +
 	"disable_arrows": false, "disable_joystick": false, })
 
 onready var anim_player:AnimationPlayer = $AnimationPlayer
+onready var hotbar = $InventoryManager/HotbarV2 setget set_hotbar, get_hotbar
 onready var inv_mng:InventoryManager = $InventoryManager
+onready var inv_ui = $InventoryManager/InventoryV2 \
+		setget set_inv_ui, get_inv_ui
 onready var inv_timer:Timer = $InventoryVisibleStateTimer
 onready var attack_timer:Timer = $AttackTimer
 
@@ -20,41 +23,7 @@ export(float) var inv_delay:float = 0.1
 export(int) var speed:int = 200
 
 var debug = true setget set_debug, get_debug
-var inv_ui setget set_inv_ui, get_inv_ui
-var hotbar setget set_hotbar, get_hotbar
 var velocity = Vector2.ZERO
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	# The inventory gets added to the inventory_manager and is set to
-	# inv_ui variable
-	self.inv_ui = self.inv_mng.add_inventory_scene(
-			load("res://godot-libs/inventory_ui/inventory/inventory.tscn"))
-	
-	self.hotbar = self.inv_mng.add_inventory_scene(
-			load("res://godot-libs/inventory_ui/hotbar/hotbar.tscn")
-	)
-	
-	# Change ui visibility to false, so it doesn't start with the inventory
-	# open
-	ObjectUtils.set_info(self.inv_ui, {
-			"debug": true,
-			"name": "InventoryUI",
-			"visible": false,
-		})
-	
-	
-	# Set the InventoryUI size/length
-	self.inv_ui.cells_manager.length = 18
-	
-	# Hotbar
-	ObjectUtils.set_info(self.hotbar, {
-			"debug": true,
-			"length": 5,
-			"name": "Hotbar",
-		})
-	self.hotbar.set_automatic_size()
-
 
 # Physics process tries to perform operations at a constant framerate
 func _physics_process(delta):

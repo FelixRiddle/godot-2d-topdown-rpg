@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://art/godot-2d-topdown-rpg-sprites/plants/trees/normal_tree.png" type="Texture" id=1]
+[ext_resource path="res://art/godot-2d-topdown-rpg-sprites/png/plants/trees/normal_tree.png" type="Texture" id=1]
 [ext_resource path="res://scenes/objects/plants/trees/normal_tree/tree.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
